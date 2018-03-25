@@ -18,7 +18,6 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'spring-boot'
 
 group = 'com.api.petmeet'
 version = '0.0.1-SNAPSHOT'
@@ -46,6 +45,7 @@ ext {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("org.springframework.boot:spring-boot-gradle-plugin")
 	compile('com.fasterxml.jackson.module:jackson-module-kotlin')
 	compile('com.microsoft.azure:azure-active-directory-spring-boot-starter')
 	compile('com.microsoft.azure:azure-keyvault-secrets-spring-boot-starter')
@@ -58,7 +58,6 @@ dependencies {
 
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
-
 	optional "org.springframework.boot:spring-boot-configuration-processor"
 	optional 'org.springframework.social:spring-social-config'
 	optional 'org.springframework.social:spring-social-core'
