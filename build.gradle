@@ -58,7 +58,7 @@ dependencies {
 
 	compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
-	optional "org.springframework.boot:spring-boot-configuration-processor"
+
 	optional 'org.springframework.social:spring-social-config'
 	optional 'org.springframework.social:spring-social-core'
 	optional 'org.springframework.social:spring-social-web'
