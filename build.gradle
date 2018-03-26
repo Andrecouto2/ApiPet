@@ -36,6 +36,10 @@ compileTestKotlin {
 	}
 }
 
+repositories {
+	mavenCentral()
+}
+
 ext {
 	azureVersion = '2.0.1'
 }
