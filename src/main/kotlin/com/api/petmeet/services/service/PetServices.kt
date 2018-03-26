@@ -16,6 +16,10 @@ class PetServices {
         return petRepository.findAll()
     }
 
+    fun getPetsByUser(id: String) : List<Pet> {
+        return return petRepository.findByIdUser(id)
+    }
+
     fun getPet(id: String) : Optional<Pet>? {
         return petRepository.findById(id)
     }

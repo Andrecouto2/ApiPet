@@ -12,25 +12,30 @@ import java.util.*
 class PetPhotoController {
 
     @Autowired
-    lateinit var petphotoServices : PetPhotoServices
+    lateinit var petPhotoServices : PetPhotoServices
 
     @GetMapping
     fun getAll(): List<PetPhoto> {
-        return petphotoServices.getAllPetPhotos()
+        return petPhotoServices.getAllPetPhotos()
     }
 
     @GetMapping("{id}")
     fun getPhoto(@PathVariable("id") id : String) : Optional<PetPhoto>? {
-        return petphotoServices.getPetPhoto(id)
+        return petPhotoServices.getPetPhoto(id)
+    }
+
+    @GetMapping("{idpet}")
+    fun getPetPhotosByIdPet(idPet: String) : List<PetPhoto> {
+        return petPhotoServices.getPetPhotosByIdPet(idPet)
     }
 
     @PostMapping
     fun save(@RequestBody petphoto: PetPhoto) {
-        petphotoServices.save(petphoto)
+        petPhotoServices.save(petphoto)
     }
 
     @DeleteMapping("{id}")
     fun delete(@PathVariable("id") id : String) {
-        petphotoServices.delete(id)
+        petPhotoServices.delete(id)
     }
 }

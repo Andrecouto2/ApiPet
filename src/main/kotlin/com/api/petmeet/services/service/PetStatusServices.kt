@@ -20,6 +20,10 @@ class PetStatusServices {
         return petStatusRepository.findById(id)
     }
 
+    fun getPetStatusByIdPet(idPet: String) : List<PetStatus> {
+        return petStatusRepository.findByIdPet(idPet)
+    }
+
     fun save(petStatus: PetStatus) {
         petStatusRepository.save(petStatus)
     }

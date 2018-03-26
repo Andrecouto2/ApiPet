@@ -24,6 +24,11 @@ class PetStatusController {
         return petStatusServices.getPetStatus(id)
     }
 
+    @GetMapping("{idpet}")
+    fun getAllPetsByUser(@RequestParam("idpet") idPet: String): List<PetStatus> {
+        return petStatusServices.getPetStatusByIdPet(idPet)
+    }
+
     @PostMapping
     fun save(@RequestBody petstatus: PetStatus) {
         petStatusServices.save(petstatus)

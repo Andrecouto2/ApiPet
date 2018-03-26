@@ -20,6 +20,10 @@ class PetMeetServices {
         return petMeetRepository.findById(id)
     }
 
+    fun getPetMeetByIdPet(idPet: String) : List<PetMeet> {
+        return petMeetRepository.findByIdPet(idPet)
+    }
+
     fun save(petMeet: PetMeet) {
         petMeetRepository.save(petMeet)
     }

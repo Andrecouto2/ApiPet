@@ -1,6 +1,5 @@
 package com.api.petmeet.services.controller
 
-import com.api.petmeet.services.model.PetPhoto
 import com.api.petmeet.services.model.PetVideo
 import com.api.petmeet.services.service.PetVideoServices
 import org.springframework.beans.factory.annotation.Autowired
@@ -13,25 +12,30 @@ import java.util.*
 class PetVideoController {
 
     @Autowired
-    lateinit var petvideoServices : PetVideoServices
+    lateinit var petVideoServices : PetVideoServices
 
     @GetMapping
     fun getAll(): List<PetVideo> {
-        return petvideoServices.getAllPetVideos()
+        return petVideoServices.getAllPetVideos()
     }
 
     @GetMapping("{id}")
     fun getVideo(@PathVariable("id") id : String) : Optional<PetVideo>? {
-        return petvideoServices.getPetVideo(id)
+        return petVideoServices.getPetVideo(id)
+    }
+
+    @GetMapping("{idpet}")
+    fun getPetVideosByIdPet(idPet: String) : List<PetVideo> {
+        return petVideoServices.getPetVideosByIdPet(idPet)
     }
 
     @PostMapping
     fun save(@RequestBody petvideo: PetVideo) {
-        petvideoServices.save(petvideo)
+        petVideoServices.save(petvideo)
     }
 
     @DeleteMapping("{id}")
     fun delete(@PathVariable("id") id : String) {
-        petvideoServices.delete(id)
+        petVideoServices.delete(id)
     }
 }

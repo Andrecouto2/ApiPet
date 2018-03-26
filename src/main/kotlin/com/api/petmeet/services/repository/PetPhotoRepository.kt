@@ -5,4 +5,6 @@ import org.springframework.data.mongodb.repository.MongoRepository
 import org.springframework.stereotype.Repository
 
 @Repository
-interface PetPhotoRepository : MongoRepository<PetPhoto, String>
+interface PetPhotoRepository : MongoRepository<PetPhoto, String> {
+    fun findByIdPet(id: String) : List<PetPhoto>
+}

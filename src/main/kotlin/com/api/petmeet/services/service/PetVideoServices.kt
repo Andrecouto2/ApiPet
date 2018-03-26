@@ -1,5 +1,6 @@
 package com.api.petmeet.services.service
 
+import com.api.petmeet.services.model.PetStatus
 import com.api.petmeet.services.model.PetVideo
 import com.api.petmeet.services.repository.PetVideoRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,6 +19,10 @@ class PetVideoServices {
 
     fun getPetVideo(id: String) : Optional<PetVideo>? {
         return petVideoRepository.findById(id)
+    }
+
+    fun getPetVideosByIdPet(idPet: String) : List<PetVideo> {
+        return petVideoRepository.findByIdPet(idPet)
     }
 
     fun save(petVideo: PetVideo) {

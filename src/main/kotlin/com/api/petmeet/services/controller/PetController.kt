@@ -19,6 +19,11 @@ class PetController {
         return petServices.getAllPets()
     }
 
+    @GetMapping("{iduser}")
+    fun getAllPetsByUser(@RequestParam("iduser") id: String): List<Pet> {
+        return petServices.getPetsByUser(id)
+    }
+
     @GetMapping("{id}")
     fun getPet(@PathVariable("id") id : String) : Optional<Pet>? {
         return petServices.getPet(id)

@@ -24,6 +24,11 @@ class PetMeetController {
         return petMeetServices.getPetMeet(id)
     }
 
+    @GetMapping("{idpet}")
+    fun getAllPetsByUser(@RequestParam("idpet") idPet: String): List<PetMeet> {
+        return petMeetServices.getPetMeetByIdPet(idPet)
+    }
+
     @PostMapping
     fun save(@RequestBody petmeet: PetMeet) {
         petMeetServices.save(petmeet)
